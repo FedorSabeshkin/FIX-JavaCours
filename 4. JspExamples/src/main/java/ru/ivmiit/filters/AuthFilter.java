@@ -37,6 +37,9 @@ public class AuthFilter implements Filter{
         if (session == null || session.getAttribute("user") == null) {
             servletRequest.getServletContext().getRequestDispatcher("/login").forward(request, response);
         }
+       /* else  {
+            servletRequest.getServletContext().getRequestDispatcher("/home").forward(request, response);
+    }  */
         // отдаем запрос дальше в цепочку фильтров
         chain.doFilter(request, response);
     }

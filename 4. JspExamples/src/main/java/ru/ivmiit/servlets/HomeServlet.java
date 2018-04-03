@@ -30,20 +30,14 @@ public class HomeServlet extends HttpServlet {
         String name = req.getParameter("name");
         String password = req.getParameter("password");
         HttpSession session = req.getSession(false);
-        // проверяем авторизован ли пользователь
-        if (session!=null){
-            // получаем параметр запроса
-            String color = req.getParameter("color");
-            // создаем Cookie с данным значением
-            Cookie colorCookie = new Cookie("color", color);
-            // кладем в ответ                                                                     
-            resp.addCookie(colorCookie);
-            // перенаправляем пользователя обратно на страницу home
-            resp.sendRedirect(req.getContextPath() + "/home");
-        }
-        // не авторизован - отправляем на страницу авторизации
-        else {
-            resp.sendRedirect(req.getContextPath() + "/login");
-        }
+
+        // получаем параметр запроса
+        String color = req.getParameter("color");
+        // создаем Cookie с данным значением
+        Cookie colorCookie = new Cookie("color", color);
+        // кладем в ответ
+        resp.addCookie(colorCookie);
+        // перенаправляем пользователя обратно на страницу home
+        resp.sendRedirect(req.getContextPath() + "/home");
     }
 }

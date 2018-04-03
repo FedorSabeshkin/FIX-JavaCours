@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 public class StockServlet extends HttpServlet {
 
    static String dbUser = "postgres";
-   static String dbPassword = "G45h76JklL";
+   static String dbPassword = " ";
    static String connectionUrl = "jdbc:postgresql://localhost:5432/stocks";
 
 
